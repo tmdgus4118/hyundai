@@ -213,7 +213,9 @@ private fun UpNext(state: UiState) {
         Spacer(Modifier.width(20.dp))
         if (up == null) Text(if (state.position == null) "위치를 기다리는 중" else "가까운 앞쪽에는 아직 없어요", style = MaterialTheme.typography.titleMedium, color = WT.TextMid)
         else {
-            Text("${formatDist(up.second)} 앞 ${if (up.first.side == io.whatsthat.car.domain.Side.AHEAD) "정면" else up.first.side.spoken}", style = MaterialTheme.typography.titleMedium, color = WT.ActiveBlue)
+            val sideText = if (up.first.side == io.whatsthat.car.domain.Side.AHEAD) "정면" else up.first.side.spoken
+            // 산·타워처럼 멀리 보이는 곳은 도로상 거리 대신 "멀리"로 표시 (음성 안내와 같은 기준)
+            Text(if (up.first.distanceM > 2_000) "$sideText 멀리" else "${formatDist(up.second)} 앞 $sideText", style = MaterialTheme.typography.titleMedium, color = WT.ActiveBlue)
             Spacer(Modifier.width(14.dp))
             Text(up.first.landmark.name, style = MaterialTheme.typography.titleLarge, color = WT.TextHigh, maxLines = 1, overflow = TextOverflow.Ellipsis)
         }
