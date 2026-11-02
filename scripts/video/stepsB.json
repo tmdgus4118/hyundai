@@ -1,0 +1,3 @@
+[{"at":{"lng_gte":126.9985},"do":"ask","arg":"방금 왼쪽에 지나간 거 뭐야","label":"left"},
+ {"at":{"lng_gte":127.090},"do":"ask","arg":"저거 뭐야","label":"that"},
+ {"at":{"after":10},"do":"ask","arg":"거기 가자","label":"go","tail":9}]

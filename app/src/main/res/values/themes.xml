@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.WhatsThat" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/wt_background</item>
+        <item name="android:statusBarColor">@color/wt_background</item>
+        <item name="android:navigationBarColor">@color/wt_background</item>
+    </style>
+    <color name="wt_background">#0A1018</color>
+    <color name="wt_brand">#002C5F</color>
+    <color name="wt_accent">#00AAD2</color>
+</resources>
